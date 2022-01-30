@@ -1,5 +1,7 @@
 
 local runtime_path = vim.split(package.path, ';')
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- LUA -------------------------------------------------------------------------
 require'lspconfig'.sumneko_lua.setup {
@@ -26,4 +28,11 @@ require'lspconfig'.sumneko_lua.setup {
       },
     },
   },
+}
+
+-- GO -------------------------------------------------------------------------
+
+require'lspconfig'.gopls.setup {
+	cmd =  { 'gopls', 'serve' },
+	capabilities = capabilities
 }

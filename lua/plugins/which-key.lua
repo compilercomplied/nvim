@@ -63,6 +63,8 @@ wk.register({
 	e = {
 		name = 'editor',
 		m = 'reload config',
+		e = 'toggle tree',
+		f = 'find in tree',
 		b = 'toggle background',
 		s = 'save buffer',
 		S = 'save all buffers',

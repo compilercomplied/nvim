@@ -117,6 +117,12 @@ vim.api.nvim_set_keymap('n',
 
 -- editor ---------------------------------------------------------------------
 vim.api.nvim_set_keymap('n',
+	'<leader>eF', [[:NvimTreeFindFile<cr>]], opts
+)
+vim.api.nvim_set_keymap('n',
+	'<leader>ee', [[:NvimTreeToggle<cr>]], opts
+)
+vim.api.nvim_set_keymap('n',
 	'<leader>es', [[<cmd>:w<CR>]], opts
 )
 vim.api.nvim_set_keymap('n',
