@@ -89,7 +89,13 @@ wk.register({
 		r = 'references',
 		R = 'refactor',
 
-		f = 'format',
+		F = 'format',
+
+		f = {
+			name = 'find',
+			t = 'types',
+			f = 'functions'
+		},
 
 		z = 'signature help',
 		a = 'actions',

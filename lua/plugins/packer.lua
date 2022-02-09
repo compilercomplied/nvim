@@ -47,9 +47,3 @@ require('packer').startup(function()
 	use { 'folke/tokyonight.nvim' }
 
 end)
-
-
--- inline configuration -------------------------------------------------------
-
--- LSP ---
-
