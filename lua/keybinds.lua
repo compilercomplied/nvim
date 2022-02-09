@@ -212,5 +212,11 @@ vim.api.nvim_set_keymap('n',
 	'<leader>cr', '<cmd>lua vim.lsp.buf.references()<CR>', opts
 )
 vim.api.nvim_set_keymap('n',
-	'<leader>cf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts
+	'<leader>cF', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts
+)
+vim.api.nvim_set_keymap('n',
+	'<leader>cft', '<cmd>lua Seek_types()<CR>', opts
+)
+vim.api.nvim_set_keymap('n',
+	'<leader>cff', '<cmd>lua Seek_functions()<CR>', opts
 )

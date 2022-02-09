@@ -17,6 +17,7 @@ require('packer').startup(function()
 
 	use { 'wbthomason/packer.nvim' }
 
+	-- Code ---------------------------------------------------------------------
 	use { 'L3MON4D3/LuaSnip' }
 	use { 'neovim/nvim-lspconfig' }
 	use { 'hrsh7th/nvim-cmp',
@@ -26,24 +27,26 @@ require('packer').startup(function()
 		}
 	}
 
-	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', }
-	}
-	use {
-		'nvim-telescope/telescope.nvim',
+	--- Utils -------------------------------------------------------------------
+	use { 'nvim-telescope/telescope.nvim',
 		requires = { 'nvim-lua/plenary.nvim' }
 	}
 
-	use {
-		'kyazdani42/nvim-tree.lua',
+	use { 'kyazdani42/nvim-tree.lua',
 		requires = { 'kyazdani42/nvim-web-devicons', },
 		config = function() require'nvim-tree'.setup {} end
 	}
 
 	use { 'folke/which-key.nvim' }
 
+	--- Eye candy ---------------------------------------------------------------
+	use { 'tpope/vim-fugitive' }
 	use { 'overcache/NeoSolarized' }
 	use { 'folke/tokyonight.nvim' }
+
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', }
+	}
 
 end)
