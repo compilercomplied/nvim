@@ -14,9 +14,17 @@ vim.cmd [[
 
 local use = require('packer').use
 require('packer').startup(function()
-	use 'wbthomason/packer.nvim'
 
-	use 'neovim/nvim-lspconfig'
+	use { 'wbthomason/packer.nvim' }
+
+	use { 'L3MON4D3/LuaSnip' }
+	use { 'neovim/nvim-lspconfig' }
+	use { 'hrsh7th/nvim-cmp',
+		requires = {
+			{ 'hrsh7th/cmp-nvim-lsp' },
+			{ 'saadparwaiz1/cmp_luasnip' },
+		}
+	}
 
 	use {
 		'nvim-lualine/lualine.nvim',
@@ -34,9 +42,9 @@ require('packer').startup(function()
 	}
 
 	use { 'folke/which-key.nvim' }
-	use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }
 
-	use { 'shaunsingh/solarized.nvim' }
+	use { 'overcache/NeoSolarized' }
+	use { 'folke/tokyonight.nvim' }
 
 end)
 

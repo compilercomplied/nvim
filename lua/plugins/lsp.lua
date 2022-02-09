@@ -5,6 +5,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- LUA -------------------------------------------------------------------------
 require'lspconfig'.sumneko_lua.setup {
+	capabilities = capabilities,
   settings = {
     Lua = {
       runtime = {

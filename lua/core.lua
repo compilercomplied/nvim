@@ -12,6 +12,9 @@ vim.opt.clipboard = "unnamedplus"	-- yank
 vim.opt.number = true					-- show line numbers
 vim.opt.relativenumber = true -- use relative line numbers
 
+vim.opt.completeopt = "menu,menuone,noselect,preview"
+vim.opt.pumwidth = 60
+
 vim.opt.textwidth = 0					-- line's 'max char count
 vim.opt.foldmethod = 'indent'	-- indent= lines with equal indent create a fold
 vim.opt.foldlevel = 95				-- folds with a higher level will be closed
@@ -21,6 +24,9 @@ vim.opt.backspace="indent,eol,start"	-- backspace behavior in normal mode
 
 -- adds color column of line, width set with `set colorcolumn`
 vim.cmd [[ highlight ColorColumn ctermbg=8 guibg=lightgrey ]]
+
+vim.cmd[[set termguicolors]]
+vim.cmd[[colorscheme NeoSolarized]]
 
 
 -- ----- Accesibility ---------------------------------------------------------
@@ -39,4 +45,4 @@ vim.opt.sidescrolloff = 5		-- minimal number of screen columns to keep to left a
 vim.opt.lazyredraw = true -- avoid redrawing when executing macros and other cmds
 vim.opt.synmaxcol = 200		-- Don't highlight anything longer than 200 chars
 
-vim.cmd [[let did_install_default_menus = 1 ]]  -- Don't load gvim menu stuff
+vim.cmd [[let did_install_default_menus = 1]]  -- Don't load gvim menu stuff
