@@ -5,13 +5,15 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
 
 	use { 'wbthomason/packer.nvim' }
+
 
 	-- Code ---------------------------------------------------------------------
 	use { 'L3MON4D3/LuaSnip' }
 	use { 'neovim/nvim-lspconfig' }
+
 	use { 'hrsh7th/nvim-cmp',
 		requires = {
 			{ 'hrsh7th/cmp-nvim-lsp' },
@@ -19,7 +21,10 @@ return require('packer').startup(function()
 		}
 	}
 
+
 	--- Utils -------------------------------------------------------------------
+	use { 'folke/which-key.nvim' }
+
 	use { 'nvim-telescope/telescope.nvim',
 		requires = { 'nvim-lua/plenary.nvim' }
 	}
@@ -29,17 +34,21 @@ return require('packer').startup(function()
 		config = function() require'nvim-tree'.setup {} end
 	}
 
-	use { 'folke/which-key.nvim' }
+	use { 'terrortylor/nvim-comment',
+		config = function() require'nvim_comment'.setup {} end
+	}
+
 
 	--- Eye candy ---------------------------------------------------------------
 	use { 'tpope/vim-fugitive' }
 	use { 'overcache/NeoSolarized' }
 	use { 'folke/tokyonight.nvim' }
 
-	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', }
+	use { 'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', },
 	}
+
+
 	-----------------------------------------------------------------------------
   if packer_bootstrap then
     require('packer').sync()
