@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
 
 	--- Utils -------------------------------------------------------------------
 	use { 'folke/which-key.nvim' }
+	use { 'tpope/vim-fugitive' }
 
 	use { 'nvim-telescope/telescope.nvim',
 		requires = { 'nvim-lua/plenary.nvim' }
@@ -40,7 +41,6 @@ return require('packer').startup(function(use)
 
 
 	--- Eye candy ---------------------------------------------------------------
-	use { 'tpope/vim-fugitive' }
 	use { 'overcache/NeoSolarized' }
 	use { 'folke/tokyonight.nvim' }
 
