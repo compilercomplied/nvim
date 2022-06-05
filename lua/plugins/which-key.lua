@@ -100,6 +100,7 @@ wk.register({
 
 		z = 'signature help',
 		a = 'actions',
+		A = 'diagnostics/analysis',
 		h = 'hover',
 
 		w = {

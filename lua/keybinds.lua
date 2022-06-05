@@ -194,6 +194,9 @@ vim.api.nvim_set_keymap('n',
 	'<leader>cz', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts
 )
 vim.api.nvim_set_keymap('n',
+	'<leader>cA', [[:Telescope diagnostics<CR>]], opts
+)
+vim.api.nvim_set_keymap('n',
 	'<leader>cwa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts
 )
 vim.api.nvim_set_keymap('n',
