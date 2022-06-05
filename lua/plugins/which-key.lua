@@ -75,6 +75,7 @@ wk.register({
 	f = {
 		name = 'fuzzy search',
 		f = 'files',
+		t = 'text',
 		c = 'commands',
 		k = 'keymaps',
 	},

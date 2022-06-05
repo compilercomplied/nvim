@@ -163,7 +163,10 @@ vim.api.nvim_set_keymap('n',
 
 -- fuzzy ----------------------------------------------------------------------
 vim.api.nvim_set_keymap('n',
-	'<leader>ff', [[:Telescope live_grep<CR>]], opts
+	'<leader>ft', [[:Telescope live_grep<CR>]], opts
+)
+vim.api.nvim_set_keymap('n',
+	'<leader>ff', [[:Telescope find_files<CR>]], opts
 )
 
 vim.api.nvim_set_keymap('n',
