@@ -38,6 +38,19 @@ return require('packer').startup(function(use)
 	use { 'terrortylor/nvim-comment',
 		config = function() require'nvim_comment'.setup {} end
 	}
+	use { 'yamatsum/nvim-cursorline',
+		config = function() require('nvim-cursorline').setup {
+			cursorline = {
+				enable = true,
+				timeout = 750
+			},
+			cursorword = {
+				enable = true,
+				min_length = 2
+			}
+
+		} end
+	}
 
 
 	--- Eye candy ---------------------------------------------------------------
