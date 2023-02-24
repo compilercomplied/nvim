@@ -2,7 +2,8 @@
 
 local runtime_path = vim.split(package.path, ';')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+local util = require("lspconfig/util")
 
 -- Helpers --------------------------------------------------------------------
 Seek_types = function ()
@@ -20,7 +21,7 @@ Seek_functions = function ()
 end
 
 -- LUA -------------------------------------------------------------------------
-require'lspconfig'.sumneko_lua.setup {
+require'lspconfig'.lua_ls.setup {
 	capabilities = capabilities,
   settings = {
     Lua = {
@@ -38,6 +39,7 @@ require'lspconfig'.sumneko_lua.setup {
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file('', true),
+				checkThirdParty = false
       },
       -- Do not send telemetry data containing a
 			-- randomized but unique identifier
@@ -52,7 +54,17 @@ require'lspconfig'.sumneko_lua.setup {
 
 require'lspconfig'.gopls.setup {
 	cmd =  { 'gopls', 'serve' },
-	capabilities = capabilities
+	capabilities = capabilities,
+	filetypes = { 'go', 'gomod' },
+	root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+	settings = {
+		gopls = {
+			analyses = {
+				unusedparams = true,
+			},
+			staticcheck = true,
+		}
+	}
 }
 
 

@@ -26,7 +26,7 @@ vim.opt.backspace="indent,eol,start"	-- backspace behavior in normal mode
 vim.cmd [[ highlight ColorColumn ctermbg=8 guibg=lightgrey ]]
 
 vim.cmd[[set termguicolors]]
-vim.cmd[[colorscheme NeoSolarized]]
+vim.cmd[[colorscheme gruvbox]]
 
 
 -- ----- Accesibility ---------------------------------------------------------

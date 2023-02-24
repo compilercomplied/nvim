@@ -54,6 +54,7 @@ return require('packer').startup(function(use)
 
 
 	--- Eye candy ---------------------------------------------------------------
+	use { "ellisonleao/gruvbox.nvim" }
 	use { 'overcache/NeoSolarized' }
 	use { 'folke/tokyonight.nvim' }
 
