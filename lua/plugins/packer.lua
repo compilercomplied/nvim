@@ -56,7 +56,8 @@ return require('packer').startup(function(use)
 	--- Eye candy ---------------------------------------------------------------
 	use { "ellisonleao/gruvbox.nvim" }
 	use { 'overcache/NeoSolarized' }
-	use { 'folke/tokyonight.nvim' }
+	use { 'shaunsingh/nord.nvim' }
+	use { 'sainnhe/everforest' }
 
 	use { 'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', },
