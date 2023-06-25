@@ -5,6 +5,9 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 local util = require("lspconfig/util")
 
+-- AutoCmd to format buffer on save
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+
 -- Helpers --------------------------------------------------------------------
 Seek_types = function ()
 	local opts = {
@@ -67,6 +70,8 @@ require'lspconfig'.gopls.setup {
 	}
 }
 
+-- Typescript -----------------------------------------------------------------
+require'lspconfig'.denols.setup{}
 
 -- C# -------------------------------------------------------------------------
 local pid = vim.fn.getpid()

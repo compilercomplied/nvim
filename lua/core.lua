@@ -48,3 +48,8 @@ vim.opt.lazyredraw = true -- avoid redrawing when executing macros and other cmd
 vim.opt.synmaxcol = 200		-- Don't highlight anything longer than 200 chars
 
 vim.cmd [[let did_install_default_menus = 1]]  -- Don't load gvim menu stuff
+
+-- --- Miscellaneous ----------------------------------------------------------
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"  -- setting required by denols to highlight code references
+}
