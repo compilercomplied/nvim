@@ -63,6 +63,8 @@ return require('packer').startup(function(use)
 		requires = { 'kyazdani42/nvim-web-devicons', },
 	}
 
+	use { 'jvirtanen/vim-hcl' }
+
 
 	-----------------------------------------------------------------------------
   if Packer_bootstrap then

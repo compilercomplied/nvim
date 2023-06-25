@@ -28,6 +28,7 @@ vim.cmd [[ highlight ColorColumn ctermbg=8 guibg=lightgrey ]]
 vim.cmd[[let g:everforest_background = 'hard']]
 vim.cmd[[set termguicolors]]
 vim.cmd[[colorscheme everforest]]
+vim.cmd[[set background=dark]]
 
 
 -- ----- Accesibility ---------------------------------------------------------
