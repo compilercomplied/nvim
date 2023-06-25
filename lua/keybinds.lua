@@ -123,13 +123,10 @@ vim.api.nvim_set_keymap('n',
 	'<leader>ee', [[:NvimTreeToggle<cr>]], opts
 )
 vim.api.nvim_set_keymap('n',
-	'<leader>es', [[<cmd>:w<CR>]], opts
+	'<leader>es', [[<cmd>:wa<CR>]], opts
 )
 vim.api.nvim_set_keymap('n',
 	'<leader>eq', [[<cmd>:wq<CR>]], opts
-)
-vim.api.nvim_set_keymap('n',
-	'<leader>eS', 'ZZ', opts
 )
 vim.api.nvim_set_keymap('n',
 	'<leader>eQ', '[[<cmd>:wqa<CR>]]', opts
@@ -194,7 +191,10 @@ vim.api.nvim_set_keymap('n',
 	'<leader>cz', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts
 )
 vim.api.nvim_set_keymap('n',
-	'<leader>cA', [[:Telescope diagnostics<CR>]], opts
+	'<leader>cAA', [[:Telescope diagnostics<CR>]], opts
+)
+vim.api.nvim_set_keymap('n',
+	'<leader>cAa', [[:lua vim.diagnostic.open_float()<CR>]], opts
 )
 vim.api.nvim_set_keymap('n',
 	'<leader>cwa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts
@@ -218,7 +218,7 @@ vim.api.nvim_set_keymap('n',
 	'<leader>cr', '<cmd>lua vim.lsp.buf.references()<CR>', opts
 )
 vim.api.nvim_set_keymap('n',
-	'<leader>cF', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts
+	'<leader>cF', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', opts
 )
 vim.api.nvim_set_keymap('n',
 	'<leader>cft', '<cmd>lua Seek_types()<CR>', opts

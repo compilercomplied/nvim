@@ -25,8 +25,9 @@ vim.opt.backspace="indent,eol,start"	-- backspace behavior in normal mode
 -- adds color column of line, width set with `set colorcolumn`
 vim.cmd [[ highlight ColorColumn ctermbg=8 guibg=lightgrey ]]
 
+vim.cmd[[let g:everforest_background = 'hard']]
 vim.cmd[[set termguicolors]]
-vim.cmd[[colorscheme gruvbox]]
+vim.cmd[[colorscheme everforest]]
 
 
 -- ----- Accesibility ---------------------------------------------------------
