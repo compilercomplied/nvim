@@ -71,7 +71,10 @@ require'lspconfig'.gopls.setup {
 }
 
 -- Typescript -----------------------------------------------------------------
-require'lspconfig'.denols.setup{}
+require'lspconfig'.tsserver.setup{}
+
+-- Frontend -------------------------------------------------------------------
+require'lspconfig'.cssmodules_ls.setup{}
 
 -- C# -------------------------------------------------------------------------
 local pid = vim.fn.getpid()
