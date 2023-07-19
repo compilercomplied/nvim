@@ -54,7 +54,6 @@ require'lspconfig'.lua_ls.setup {
 }
 
 -- GO -------------------------------------------------------------------------
-
 require'lspconfig'.gopls.setup {
 	cmd =  { 'gopls', 'serve' },
 	capabilities = capabilities,
