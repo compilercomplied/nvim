@@ -54,7 +54,6 @@ require'lspconfig'.lua_ls.setup {
 }
 
 -- GO -------------------------------------------------------------------------
-
 require'lspconfig'.gopls.setup {
 	cmd =  { 'gopls', 'serve' },
 	capabilities = capabilities,
@@ -85,3 +84,6 @@ require'lspconfig'.omnisharp.setup {
 	cmd =  { omnisharp_bin, '--languageserver', '--hostPID', tostring(pid) },
 	capabilities = capabilities
 }
+
+-- Terraform ------------------------------------------------------------------
+require'lspconfig'.terraformls.setup{}
