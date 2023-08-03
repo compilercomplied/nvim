@@ -75,6 +75,7 @@ require'lspconfig'.tsserver.setup{}
 
 -- Frontend -------------------------------------------------------------------
 require'lspconfig'.cssmodules_ls.setup{}
+require'lspconfig'.cssls.setup{}
 
 -- C# -------------------------------------------------------------------------
 local pid = vim.fn.getpid()
