@@ -93,8 +93,10 @@ wk.register({
 
 		f = {
 			name = 'find',
-			t = 'types',
-			f = 'functions'
+			t = 'document types',
+			f = 'document functions',
+			T = 'workspace types',
+			F = 'workspacefunctions'
 		},
 
 		z = 'signature help',

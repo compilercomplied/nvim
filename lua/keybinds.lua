@@ -1,4 +1,3 @@
-
 local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = ' '
@@ -221,8 +220,14 @@ vim.api.nvim_set_keymap('n',
 	'<leader>cF', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', opts
 )
 vim.api.nvim_set_keymap('n',
-	'<leader>cft', '<cmd>lua Seek_types()<CR>', opts
+	'<leader>cft', '<cmd>lua Seek_types(true)<CR>', opts
 )
 vim.api.nvim_set_keymap('n',
-	'<leader>cff', '<cmd>lua Seek_functions()<CR>', opts
+	'<leader>cff', '<cmd>lua Seek_functions(true)<CR>', opts
+)
+vim.api.nvim_set_keymap('n',
+	'<leader>cfT', '<cmd>lua Seek_types(false)<CR>', opts
+)
+vim.api.nvim_set_keymap('n',
+	'<leader>cfF', '<cmd>lua Seek_functions(false)<CR>', opts
 )

@@ -9,53 +9,61 @@ local util = require("lspconfig/util")
 vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 
 -- Helpers --------------------------------------------------------------------
-Seek_types = function ()
+local function telescope_lsp_wrap(opts, documentscope)
+	if documentscope then
+		require('telescope.builtin').lsp_document_symbols(opts)
+	else
+		require('telescope.builtin').lsp_workspace_symbols(opts)
+	end
+end
+
+Seek_types = function(documentscope)
 	local opts = {
 		symbols = { 'interface', 'class', 'enum' }
 	}
-	require('telescope.builtin').lsp_workspace_symbols(opts)
+	telescope_lsp_wrap(opts, documentscope)
 end
 
-Seek_functions = function ()
+Seek_functions = function(documentscope)
 	local opts = {
 		symbols = { 'function', 'method' }
 	}
-	require('telescope.builtin').lsp_workspace_symbols(opts)
+	telescope_lsp_wrap(opts, documentscope)
 end
 
 -- LUA -------------------------------------------------------------------------
-require'lspconfig'.lua_ls.setup {
+require 'lspconfig'.lua_ls.setup {
 	capabilities = capabilities,
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using
+	settings = {
+		Lua = {
+			runtime = {
+				-- Tell the language server which version of Lua you're using
 				-- (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-        -- Setup your lua path
-        path = runtime_path,
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file('', true),
+				version = 'LuaJIT',
+				-- Setup your lua path
+				path = runtime_path,
+			},
+			diagnostics = {
+				-- Get the language server to recognize the `vim` global
+				globals = { 'vim' },
+			},
+			workspace = {
+				-- Make the server aware of Neovim runtime files
+				library = vim.api.nvim_get_runtime_file('', true),
 				checkThirdParty = false
-      },
-      -- Do not send telemetry data containing a
+			},
+			-- Do not send telemetry data containing a
 			-- randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
 }
 
 -- GO -------------------------------------------------------------------------
-require'lspconfig'.gopls.setup {
-	cmd =  { 'gopls', 'serve' },
+require 'lspconfig'.gopls.setup {
+	cmd = { 'gopls', 'serve' },
 	capabilities = capabilities,
 	filetypes = { 'go', 'gomod' },
 	root_dir = util.root_pattern("go.work", "go.mod", ".git"),
@@ -70,20 +78,23 @@ require'lspconfig'.gopls.setup {
 }
 
 -- Typescript -----------------------------------------------------------------
-require'lspconfig'.tsserver.setup{}
+require 'lspconfig'.tsserver.setup {}
 
 -- Frontend -------------------------------------------------------------------
-require'lspconfig'.cssmodules_ls.setup{}
-require'lspconfig'.cssls.setup{}
+require 'lspconfig'.cssmodules_ls.setup {}
+require 'lspconfig'.cssls.setup {}
 
 -- C# -------------------------------------------------------------------------
 local pid = vim.fn.getpid()
 local omnisharp_bin = '/opt/omnisharp/run'
 
-require'lspconfig'.omnisharp.setup {
-	cmd =  { omnisharp_bin, '--languageserver', '--hostPID', tostring(pid) },
+require 'lspconfig'.omnisharp.setup {
+	cmd = { omnisharp_bin, '--languageserver', '--hostPID', tostring(pid) },
 	capabilities = capabilities
 }
 
 -- Terraform ------------------------------------------------------------------
-require'lspconfig'.terraformls.setup{}
+require 'lspconfig'.terraformls.setup {}
+
+-- Python ---------------------------------------------------------------------
+require 'lspconfig'.pyright.setup {}
