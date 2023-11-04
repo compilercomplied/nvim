@@ -97,4 +97,12 @@ require 'lspconfig'.omnisharp.setup {
 require 'lspconfig'.terraformls.setup {}
 
 -- Python ---------------------------------------------------------------------
-require 'lspconfig'.pyright.setup {}
+require 'lspconfig'.pylsp.setup {
+	settings = {
+		plugins = {
+			black = { enabled = true },
+			pyls_isort = { enabled = true }
+		}
+	},
+	capabilities = capabilities
+}
