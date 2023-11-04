@@ -2,6 +2,14 @@
 
 local runtime_path = vim.split(package.path, ';')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- capabilities.textDocument.completion.completionItem.resolveSupport = {
+-- 	properties = {
+-- 		'documentation',
+-- 		'detail',
+-- 		'additionalTextEdits',
+-- 	}
+-- }
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 local util = require("lspconfig/util")
 
@@ -97,12 +105,11 @@ require 'lspconfig'.omnisharp.setup {
 require 'lspconfig'.terraformls.setup {}
 
 -- Python ---------------------------------------------------------------------
-require 'lspconfig'.pylsp.setup {
-	settings = {
-		plugins = {
-			black = { enabled = true },
-			pyls_isort = { enabled = true }
-		}
-	},
+require 'lspconfig'.ruff_lsp.setup {
+	on_attach = function(client, buffer)
+		client.server_capabilities.hoverProvider = false
+	end
+}
+require 'lspconfig'.pyright.setup {
 	capabilities = capabilities
 }
