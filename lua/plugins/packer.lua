@@ -19,7 +19,8 @@ return require('packer').startup(function(use)
 	-- Code ---------------------------------------------------------------------
 	use { 'L3MON4D3/LuaSnip' }
 	use { 'neovim/nvim-lspconfig' }
-
+	use { 'nvim-treesitter/nvim-treesitter' }
+	use { 'seblyng/roslyn.nvim' }
 	use { 'hrsh7th/nvim-cmp',
 		requires = {
 			{ 'hrsh7th/cmp-nvim-lsp' },
@@ -30,6 +31,8 @@ return require('packer').startup(function(use)
 
 	--- Utils -------------------------------------------------------------------
 	use { 'folke/which-key.nvim' }
+	use { 'williamboman/mason.nvim' }
+	use { 'williamboman/mason-lspconfig.nvim' }
 	use { 'tpope/vim-fugitive' }
 
 	use { 'nvim-telescope/telescope.nvim',

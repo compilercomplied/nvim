@@ -86,7 +86,9 @@ require 'lspconfig'.gopls.setup {
 }
 
 -- Typescript -----------------------------------------------------------------
-require 'lspconfig'.tsserver.setup {}
+-- ### Deprecated ########################
+-- require 'lspconfig'.tsserver.setup {} #
+-- #######################################
 
 -- Frontend -------------------------------------------------------------------
 require 'lspconfig'.cssmodules_ls.setup {}
@@ -105,7 +107,7 @@ require 'lspconfig'.omnisharp.setup {
 require 'lspconfig'.terraformls.setup {}
 
 -- Python ---------------------------------------------------------------------
-require 'lspconfig'.ruff_lsp.setup {
+require 'lspconfig'.ruff.setup {
 	on_attach = function(client, buffer)
 		client.server_capabilities.hoverProvider = false
 	end

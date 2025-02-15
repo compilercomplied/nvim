@@ -1,7 +1,6 @@
-
 local wk = require('which-key')
 
-wk.setup{
+wk.setup {
 
 	plugins = {
 		marks = false,
@@ -9,7 +8,7 @@ wk.setup{
 		spelling = { enabled = false }
 	},
 
-	window = {
+	win = {
 		position = 'bottom'
 	}
 
@@ -17,100 +16,78 @@ wk.setup{
 
 local opts = { prefix = "<leader>" }
 
-wk.register({
-	-- windows ------------------------------------------------------------------
-	w = {
-		name = 'windows',
-		w = { 'focus prev' },
-		W = { 'focus next' },
-		s = { 'horizontal split' },
-		v = { 'vertical split' },
-		h = { 'focus left' },
-		j = { 'focus down' },
-		k = { 'focus up' },
-		l = { 'focus left' },
-		q = { 'save and close' },
-		Q = { 'save and close all' },
-
-		x = {
-			name = 'resize',
-			h = { 'expand left' },
-			j = { 'expand down' },
-			k = { 'expand up' },
-			l = { 'expand right' },
-		},
-
-		m = {
-			name = 'move',
-			h = { 'left' },
-			j = { 'down' },
-			k = { 'up' },
-			l = { 'right' },
-		},
-
-		['='] = { 'resize equally' }
-	},
+wk.add({
 	-- buffers ------------------------------------------------------------------
-	b = {
-		name = 'buffers',
-		d = 'delete',
-		f = 'fuzzy find',
-		n = 'next',
-		p = 'previous',
-		b = 'search'
-	},
-	-- editor -------------------------------------------------------------------
-	e = {
-		name = 'editor',
-		m = 'reload config',
-		e = 'toggle tree',
-		f = 'find in tree',
-		b = 'toggle background',
-		s = 'save all buffers',
-		q = 'save and close buff',
-		Q = 'save and quit',
-	},
-	-- fuzzy --------------------------------------------------------------------
-	f = {
-		name = 'fuzzy search',
-		f = 'files',
-		t = 'text',
-		c = 'commands',
-		k = 'keymaps',
-	},
+	{ "<leader>b",   group = "buffers" },
+	{ "<leader>bb",  desc = "search" },
+	{ "<leader>bd",  desc = "delete" },
+	{ "<leader>bf",  desc = "fuzzy find" },
+	{ "<leader>bn",  desc = "next" },
+	{ "<leader>bp",  desc = "previous" },
+
 	-- code ---------------------------------------------------------------------
-	c = {
-		name = 'code',
-		D = 'declaration',
-		d = 'definition',
-		i = 'implementation',
-		t = 'type def',
+	{ "<leader>c",   group = "code" },
+	{ "<leader>cA",  desc = "diagnostics/analysis" },
+	{ "<leader>cD",  desc = "declaration" },
+	{ "<leader>cF",  desc = "format" },
+	{ "<leader>cR",  desc = "refactor" },
+	{ "<leader>ca",  desc = "actions" },
+	{ "<leader>cd",  desc = "definition" },
 
-		r = 'references',
-		R = 'refactor',
+	{ "<leader>cf",  group = "find" },
+	{ "<leader>cfF", desc = "workspacefunctions" },
+	{ "<leader>cfT", desc = "workspace types" },
+	{ "<leader>cff", desc = "document functions" },
+	{ "<leader>cft", desc = "document types" },
+	{ "<leader>ch",  desc = "hover" },
+	{ "<leader>ci",  desc = "implementation" },
+	{ "<leader>cr",  desc = "references" },
+	{ "<leader>ct",  desc = "type def" },
 
-		F = 'format',
+	{ "<leader>cw",  group = "workspace" },
+	{ "<leader>cwa", desc = "add folder" },
+	{ "<leader>cwl", desc = "list folders" },
+	{ "<leader>cwr", desc = "remove folder" },
+	{ "<leader>cz",  desc = "signature help" },
 
-		f = {
-			name = 'find',
-			t = 'document types',
-			f = 'document functions',
-			T = 'workspace types',
-			F = 'workspacefunctions'
-		},
+	-- editor -------------------------------------------------------------------
+	{ "<leader>e",   group = "editor" },
+	{ "<leader>eQ",  desc = "save and quit" },
+	{ "<leader>eb",  desc = "toggle background" },
+	{ "<leader>ee",  desc = "toggle tree" },
+	{ "<leader>ef",  desc = "find in tree" },
+	{ "<leader>em",  desc = "reload config" },
+	{ "<leader>eq",  desc = "save and close buff" },
+	{ "<leader>es",  desc = "save all buffers" },
 
-		z = 'signature help',
-		a = 'actions',
-		A = 'diagnostics/analysis',
-		h = 'hover',
+	-- fuzzy --------------------------------------------------------------------
+	{ "<leader>f",   group = "fuzzy search" },
+	{ "<leader>fc",  desc = "commands" },
+	{ "<leader>ff",  desc = "files" },
+	{ "<leader>fk",  desc = "keymaps" },
+	{ "<leader>ft",  desc = "text" },
 
-		w = {
-			name = 'workspace',
-			a = 'add folder',
-			r = 'remove folder',
-			l = 'list folders'
-		}
-
-	}
-
+	-- windows ------------------------------------------------------------------
+	{ "<leader>w",   group = "windows" },
+	{ "<leader>w=",  desc = "resize equally" },
+	{ "<leader>wQ",  desc = "save and close all" },
+	{ "<leader>wW",  desc = "focus next" },
+	{ "<leader>wh",  desc = "focus left" },
+	{ "<leader>wj",  desc = "focus down" },
+	{ "<leader>wk",  desc = "focus up" },
+	{ "<leader>wl",  desc = "focus left" },
+	{ "<leader>wm",  group = "move" },
+	{ "<leader>wmh", desc = "left" },
+	{ "<leader>wmj", desc = "down" },
+	{ "<leader>wmk", desc = "up" },
+	{ "<leader>wml", desc = "right" },
+	{ "<leader>wq",  desc = "save and close" },
+	{ "<leader>ws",  desc = "horizontal split" },
+	{ "<leader>wv",  desc = "vertical split" },
+	{ "<leader>ww",  desc = "focus prev" },
+	{ "<leader>wx",  group = "resize" },
+	{ "<leader>wxh", desc = "expand left" },
+	{ "<leader>wxj", desc = "expand down" },
+	{ "<leader>wxk", desc = "expand up" },
+	{ "<leader>wxl", desc = "expand right" },
 }, opts)
