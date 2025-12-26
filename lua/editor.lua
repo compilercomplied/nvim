@@ -1,5 +1,3 @@
-
-
 -- ----- Editor ---------------------------------------------------------------
 vim.opt.tabstop = 2       -- show existing tab with $value spaces width
 vim.opt.softtabstop = 2   -- number of spaces tab counts for while editing
@@ -45,11 +43,6 @@ vim.opt.sidescrolloff = 5		-- minimal number of screen columns to keep to left a
 
 -- ----- Performance ----------------------------------------------------------
 vim.opt.lazyredraw = true -- avoid redrawing when executing macros and other cmds
-vim.opt.synmaxcol = 200		-- Don't highlight anything longer than 200 chars
+vim.opt.synmaxcol = 100		-- Don't highlight anything longer than 200 chars
 
 vim.cmd [[let did_install_default_menus = 1]]  -- Don't load gvim menu stuff
-
--- --- Miscellaneous ----------------------------------------------------------
-vim.g.markdown_fenced_languages = {
-  "ts=typescript"  -- setting required by denols to highlight code references
-}
