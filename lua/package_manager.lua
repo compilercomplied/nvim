@@ -64,6 +64,8 @@ return require('packer').startup(function(use)
 		config = function() require('plugins.nvim_cursorline') end
 	}
 
+	use { 'OXY2DEV/markview.nvim' }
+
 	use { 'jvirtanen/vim-hcl' }
 
 
