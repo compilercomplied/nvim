@@ -1,3 +1,4 @@
+-- Use space as leader key.
 vim.g.mapleader = ' '
 
 require('keymaps.buffers')
