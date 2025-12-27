@@ -1,4 +1,4 @@
-local map = require('editor_scripting/keybindings').map
+local map = require('editor_scripting/keymaps').set
 
 map("Focus next window", 'n', '<leader>ww', '<C-W>w')
 map("Focus previous window", 'n', '<leader>wW', '<C-W>W')

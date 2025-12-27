@@ -1,6 +1,6 @@
----@class Keybindings
+---@class Keymaps
 ---@brief A utility module for managing Neovim keybindings with a simplified API.
-local Keybindings = {}
+local M = {}
 
 ---@alias MapMode "n" | "i" | "v" | "x" | "t" | "c"
 
@@ -11,9 +11,9 @@ local Keybindings = {}
 ---@param mode MapMode|MapMode[] The mode(s) for the keybinding (e.g., "n" for normal, "i" for insert).
 ---@param lhs string The keybinding to map (Left-Hand Side).
 ---@param rhs string|function The action to execute (Right-Hand Side).
-function Keybindings.map(desc, mode, lhs, rhs)
+function M.set(desc, mode, lhs, rhs)
 	local options = { noremap = true, silent = true, desc = desc }
 	vim.keymap.set(mode, lhs, rhs, options)
 end
 
-return Keybindings
+return M
