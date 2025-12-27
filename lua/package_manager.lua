@@ -15,9 +15,16 @@ return require('packer').startup(function(use)
 	use { 'wbthomason/packer.nvim' }
 
 	-- Code ---------------------------------------------------------------------
-	use { 'saghen/blink.cmp',
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate',
+		config = function() require('plugins.nvim_treesitter') end
+	}
+
+	use {
+		'saghen/blink.cmp',
 		tag = 'v1.7.0',
-		config = require('plugins.blink_cmp')
+		config = function() require('plugins.blink_cmp') end
 	}
 	use { 'neovim/nvim-lspconfig' }
 	-- drop in replacement for typescript-language-server
@@ -33,11 +40,11 @@ return require('packer').startup(function(use)
 	--- Utils -------------------------------------------------------------------
 	use { 'folke/which-key.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', },
-		config = require('plugins.which-key')
+		config = function() require('plugins.which-key') end
 	}
 	use { 'williamboman/mason.nvim',
 		requires = { 'williamboman/mason-lspconfig.nvim' },
-		config = require('plugins.mason')
+		config = function() require('plugins.mason') end
 	}
 	use { 'tpope/vim-fugitive' }
 
@@ -47,14 +54,14 @@ return require('packer').startup(function(use)
 
 	use { 'kyazdani42/nvim-tree.lua',
 		requires = { 'kyazdani42/nvim-web-devicons', },
-		config = require('plugins.nvim-tree')
+		config = function() require('plugins.nvim-tree') end
 	}
 
 	use { 'terrortylor/nvim-comment',
 		config = function() require 'nvim_comment'.setup {} end
 	}
 	use { 'yamatsum/nvim-cursorline',
-		config = require('plugins.nvim_cursorline')
+		config = function() require('plugins.nvim_cursorline') end
 	}
 
 	use { 'jvirtanen/vim-hcl' }
@@ -69,7 +76,7 @@ return require('packer').startup(function(use)
 
 	use { 'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', },
-		config = require('plugins.lualine')
+		config = function() require('plugins.lualine') end
 	}
 
 

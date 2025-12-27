@@ -20,3 +20,4 @@ require('lsp_servers.typescript_tools')
 -- Language servers ------------------------------------------------------------
 vim.lsp.enable('gopls')
 vim.lsp.enable('terraformls')
+vim.lsp.enable('nushell')
