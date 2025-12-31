@@ -36,6 +36,9 @@ return require('packer').startup(function(use)
 		end,
 	}
 
+	use { 'tpope/vim-fugitive' }
+	use { 'sindrets/diffview.nvim' }
+
 
 	--- Utils -------------------------------------------------------------------
 	use { 'folke/which-key.nvim',
@@ -46,7 +49,6 @@ return require('packer').startup(function(use)
 		requires = { 'williamboman/mason-lspconfig.nvim' },
 		config = function() require('plugins.mason') end
 	}
-	use { 'tpope/vim-fugitive' }
 
 	use { 'nvim-telescope/telescope.nvim',
 		requires = { 'nvim-lua/plenary.nvim' }
