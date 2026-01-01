@@ -34,6 +34,7 @@ wk.add({
 	{ "<leader>e", group = "editor", icon = { icon = "", color = "Orange" } },
 	{ "<leader>f", group = "fuzzy search", icon = { icon = "", color = "Green" } },
 	{ "<leader>g", group = "git", icon = { icon = "", color = "Blue" } },
+	{ "<leader>gp", icon = { icon = "", color = "Red" } },
 	{ "<leader>t", group = "tabs", icon = { icon = "󰓩", color = "Green" } },
 	{ "<leader>w", group = "windows", icon = { icon = "", color = "Yellow" } },
 	{ "<leader>wm", group = "move", icon = { icon = "", color = "Green" } },

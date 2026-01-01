@@ -2,25 +2,18 @@ local M = {}
 
 --- Clears the cached configuration modules and re-sources the main configuration file.
 ---
---- It iterates through `package.loaded` and removes modules that match the user's
---- configuration structure (editor, keybindings, lsp, plugins, etc.) before
---- executing the `init.lua` file.
+--- It iterates through `package.loaded` and dynamically identifies user modules
+--- by checking if they exist within the Neovim configuration directory.
+--- These modules are then removed from the cache before re-executing `init.lua`.
 function M.reload_config()
-	local user_modules = {
-		'^editor$', '^editor%.',           -- matches 'editor' and 'editor.*'
-		'^keybindings$', '^keybindings%.', -- matches 'keybindings' and 'keybindings.*'
-		'^lsp$', '^lsp%.',                 -- matches 'lsp' and 'lsp.*'
-		'^plugins$', '^plugins%.',         -- matches 'plugins' and 'plugins.*'
-		'^package_manager$',               -- matches 'package_manager'
-		'^editor_scripting$', '^editor_scripting%.' -- matches 'editor_scripting' and 'editor_scripting.*'
-	}
-
 	for name, _ in pairs(package.loaded) do
-		for _, pattern in ipairs(user_modules) do
-			if name:match(pattern) then
-				package.loaded[name] = nil
-				break
-			end
+		local name_path = name:gsub("%.", "/")
+		local config_path = vim.fn.stdpath("config")
+		local path_lua = config_path .. "/lua/" .. name_path .. ".lua"
+		local path_init = config_path .. "/lua/" .. name_path .. "/init.lua"
+
+		if vim.fn.filereadable(path_lua) == 1 or vim.fn.filereadable(path_init) == 1 then
+			package.loaded[name] = nil
 		end
 	end
 
