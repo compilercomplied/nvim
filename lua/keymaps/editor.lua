@@ -1,6 +1,7 @@
 local set = require('editor_scripting/keymaps').set
 local actions = require('editor_scripting.actions')
 
+set("AI", {'n', 't'}, '<leader>ea', actions.toggle_gemini)
 set("Terminal", {'n', 't'}, '<leader>et', actions.toggle_terminal)
 set("Find file in tree", 'n', '<leader>eF', [[:NvimTreeFindFile<cr>]])
 set("Toggle file tree", 'n', '<leader>ee', [[:NvimTreeToggle<cr>]])

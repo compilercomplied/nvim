@@ -75,7 +75,24 @@ function M.toggle_terminal()
 	)
 
 	if vim.bo[_G.TerminalFloatingWindowState.floating.buf].buftype ~= "terminal" then
-		vim.cmd.terminal("nu") -- Launch nu explicitly
+		vim.cmd.terminal("nu")
+	end
+
+	vim.cmd("startinsert")
+end
+
+function M.toggle_gemini()
+	if vim.api.nvim_win_is_valid(_G.GeminiFloatingWindowState.floating.win) then
+		vim.api.nvim_win_hide(_G.GeminiFloatingWindowState.floating.win)
+		return
+	end
+
+	_G.GeminiFloatingWindowState.floating = create_floating_window(
+		{ buf = _G.GeminiFloatingWindowState.floating.buf }
+	)
+
+	if vim.bo[_G.GeminiFloatingWindowState.floating.buf].buftype ~= "terminal" then
+		vim.cmd.terminal("gemini")
 	end
 
 	vim.cmd("startinsert")

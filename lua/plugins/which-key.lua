@@ -32,6 +32,7 @@ wk.add({
 	{ "<leader>cf", group = "find", icon = { icon = "", color = "Azure" } },
 	{ "<leader>cw", group = "workspace", icon = { icon = "", color = "Green" } },
 	{ "<leader>e", group = "editor", icon = { icon = "", color = "Orange" } },
+	{ "<leader>ea", icon = { icon = "✨", color = "Purple" } },
 	{ "<leader>f", group = "fuzzy search", icon = { icon = "", color = "Green" } },
 	{ "<leader>g", group = "git", icon = { icon = "", color = "Blue" } },
 	{ "<leader>gp", icon = { icon = "", color = "Red" } },
@@ -40,5 +41,3 @@ wk.add({
 	{ "<leader>wm", group = "move", icon = { icon = "", color = "Green" } },
 	{ "<leader>wx", group = "resize", icon = { icon = "󰩨", color = "Green" } },
 }, opts)
-
-

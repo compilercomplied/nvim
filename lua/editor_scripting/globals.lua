@@ -20,3 +20,12 @@ _G.TerminalFloatingWindowState = _G.TerminalFloatingWindowState or {
 		win = -1
 	}
 }
+
+--- Global state for the Gemini CLI floating window.
+--- Follows the same logic and persistence rules as TerminalFloatingWindowState.
+_G.GeminiFloatingWindowState = _G.GeminiFloatingWindowState or {
+	floating = {
+		buf = -1,
+		win = -1
+	}
+}
