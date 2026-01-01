@@ -28,14 +28,16 @@ local opts = { prefix = "<leader>" }
 wk.add({
 	{ "<leader>b", group = "buffers", icon = { icon = "󱔗", color = "Green" } },
 	{ "<leader>c", group = "code", icon = { icon = "󰅩", color = "Green" } },
-	{ "<leader>cf", group = "find", icon = { icon = "", color = "Green" } },
-	{ "<leader>cw", group = "workspace", icon = { icon = "", color = "Green" } },
 	{ "<leader>cA", group = "diagnostics" },
-	{ "<leader>e", group = "editor", icon = { icon = "", color = "Green" } },
+	{ "<leader>cf", group = "find", icon = { icon = "", color = "Azure" } },
+	{ "<leader>cw", group = "workspace", icon = { icon = "", color = "Green" } },
+	{ "<leader>e", group = "editor", icon = { icon = "", color = "Orange" } },
 	{ "<leader>f", group = "fuzzy search", icon = { icon = "", color = "Green" } },
-	{ "<leader>w", group = "windows", icon = { icon = "", color = "Green" } },
+	{ "<leader>g", group = "git", icon = { icon = "", color = "Blue" } },
+	{ "<leader>t", group = "tabs", icon = { icon = "󰓩", color = "Green" } },
+	{ "<leader>w", group = "windows", icon = { icon = "", color = "Yellow" } },
 	{ "<leader>wm", group = "move", icon = { icon = "", color = "Green" } },
 	{ "<leader>wx", group = "resize", icon = { icon = "󰩨", color = "Green" } },
-	{ "<leader>t", group = "tabs", icon = { icon = "󰓩", color = "Green" } },
 }, opts)
+
 
