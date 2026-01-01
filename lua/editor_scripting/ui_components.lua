@@ -26,6 +26,10 @@ function M.create_floating_window(opts)
 	}
 
 	local win = vim.api.nvim_open_win(buf, true, win_config)
+	-- By unlisting the buffer, we remove it from the buffer list. This means
+	-- that we won't find the floating window when moving between nvim buffers.
+	vim.bo[buf].buflisted = false
+
 	return { buf = buf, win = win }
 end
 
