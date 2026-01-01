@@ -2,6 +2,7 @@ local set = require('editor_scripting/keymaps').set
 
 
 set("Git push", 'n', '<leader>gp', [[:Git push<CR>]])
+set("Git add .", 'n', '<leader>ga', [[:Git add .<CR>]])
 
 set("Toggle git view", 'n', '<leader>gg', function()
 	-- Iterate over all opened windows to see if there is a window opened with

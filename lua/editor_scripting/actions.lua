@@ -1,3 +1,6 @@
+local create_floating_window =
+		require('editor_scripting.ui_components').create_floating_window
+
 local M = {}
 
 --- Clears the cached configuration modules and re-sources the main configuration file.
@@ -12,7 +15,7 @@ function M.reload_config()
 		local path_lua = config_path .. "/lua/" .. name_path .. ".lua"
 		local path_init = config_path .. "/lua/" .. name_path .. "/init.lua"
 
-		if vim.fn.filereadable(path_lua) == 1 or vim.fn.filereadable(path_init) == 1 then
+		if (vim.fn.filereadable(path_lua) == 1 or vim.fn.filereadable(path_init) == 1) then
 			package.loaded[name] = nil
 		end
 	end
@@ -58,6 +61,24 @@ function M.open_colorschemes()
 			results = filtered_colors
 		}
 	})
+end
+
+
+function M.toggle_terminal()
+	if vim.api.nvim_win_is_valid(_G.TerminalFloatingWindowState.floating.win) then
+		vim.api.nvim_win_hide(_G.TerminalFloatingWindowState.floating.win)
+		return
+	end
+
+	_G.TerminalFloatingWindowState.floating = create_floating_window(
+		{ buf = _G.TerminalFloatingWindowState.floating.buf }
+	)
+
+	if vim.bo[_G.TerminalFloatingWindowState.floating.buf].buftype ~= "terminal" then
+		vim.cmd.terminal("nu") -- Launch nu explicitly
+	end
+
+	vim.cmd("startinsert")
 end
 
 return M
