@@ -73,10 +73,12 @@ return require('packer').startup(function(use)
 
 	--- Eye candy ---------------------------------------------------------------
 	use { 'rebelot/kanagawa.nvim' }
-	use { 'ellisonleao/gruvbox.nvim' }
+	use { 'sainnhe/gruvbox-material' }
 	use { 'overcache/NeoSolarized' }
 	use { 'shaunsingh/nord.nvim' }
 	use { 'sainnhe/everforest' }
+	use { 'catppuccin/nvim' }
+	use { 'EdenEast/nightfox.nvim' }
 
 	use { 'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', },
