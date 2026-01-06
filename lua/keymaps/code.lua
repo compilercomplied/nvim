@@ -1,5 +1,5 @@
 local set = require('editor_scripting/keymaps').set
-local actions = require('editor_scripting.actions')
+local telescope = require('editor_scripting.telescope_extensions')
 
 set("Go to declaration", 'n', '<leader>cD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
 set("Go to definition", 'n', '<leader>cd', '<cmd>lua vim.lsp.buf.definition()<CR>')
@@ -16,7 +16,7 @@ set("Rename", 'n', '<leader>cR', '<cmd>lua vim.lsp.buf.rename()<CR>')
 set("Code action", 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
 set("References", 'n', '<leader>cr', '<cmd>lua vim.lsp.buf.references()<CR>')
 set("Format buffer", 'n', '<leader>cF', '<cmd>lua vim.lsp.buf.format { async = true }<CR>')
-set("Search types (current)", 'n', '<leader>cft', function() actions.seek_types(true) end)
-set("Search functions (current)", 'n', '<leader>cff', function() actions.seek_functions(true) end)
-set("Search types (workspace)", 'n', '<leader>cfT', function() actions.seek_types(false) end)
-set("Search functions (workspace)", 'n', '<leader>cfF', function() actions.seek_functions(false) end)
+set("Search types (current)", 'n', '<leader>cft', function() telescope.fuzzy_search_types(true) end)
+set("Search functions (current)", 'n', '<leader>cff', function() telescope.fuzzy_search_functions(true) end)
+set("Search types (workspace)", 'n', '<leader>cfT', function() telescope.fuzzy_search_types(false) end)
+set("Search functions (workspace)", 'n', '<leader>cfF', function() telescope.fuzzy_search_functions(false) end)
