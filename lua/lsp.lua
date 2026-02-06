@@ -16,6 +16,8 @@ end
 
 require('lsp_servers.lua_ls')
 require('lsp_servers.typescript_tools')
+require('lsp_servers.basedpyright')
+require('lsp_servers.ruff')
 
 -- Language servers ------------------------------------------------------------
 vim.lsp.enable('gopls')
