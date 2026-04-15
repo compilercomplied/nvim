@@ -84,8 +84,9 @@ return require('packer').startup(function(use)
 	use { 'overcache/NeoSolarized' }
 	use { 'shaunsingh/nord.nvim' }
 	use { 'sainnhe/everforest' }
-	use { 'catppuccin/nvim' }
+	use { 'catppuccin/nvim', as = 'catppuccin' }
 	use { 'EdenEast/nightfox.nvim' }
+	use { 'ember-theme/nvim', as = 'ember' }
 
 	-- Statusline.
 	use { 'nvim-lualine/lualine.nvim',
