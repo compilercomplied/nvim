@@ -11,6 +11,7 @@ local languages = {
 	rust = { "rs" },
 	typescript = { "ts" },
 	yaml = { "yaml", "yml" },
+	kotlin = { "kt", "kts" },
 }
 
 local to_install = {}

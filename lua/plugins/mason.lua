@@ -5,5 +5,6 @@ require('mason-lspconfig').setup({
 		"ts_ls",
 		"basedpyright",
 		"ruff",
+		"kotlin_language_server",
 	}
 })
