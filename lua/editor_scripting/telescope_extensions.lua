@@ -10,7 +10,7 @@ local function telescope_lsp_wrap(opts, documentscope)
 	if documentscope then
 		telescope_module.lsp_document_symbols(opts)
 	else
-		telescope_module.lsp_workspace_symbols(opts)
+		telescope_module.lsp_dynamic_workspace_symbols(opts)
 	end
 end
 

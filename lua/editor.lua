@@ -1,4 +1,6 @@
 -- ----- Editor ---------------------------------------------------------------
+-- Ensure dotnet global tools (e.g. dotnet-easydotnet) are on PATH.
+vim.env.PATH = vim.env.PATH .. ':' .. vim.fn.expand('~/.dotnet/tools')
 vim.opt.tabstop = 2               -- show existing tab with $value spaces width
 vim.opt.softtabstop = 2           -- number of spaces tab counts for while editing
 vim.opt.shiftwidth = 2            -- when indenting with '>', use $value spaces width

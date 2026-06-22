@@ -12,6 +12,7 @@ local languages = {
 	typescript = { "ts" },
 	yaml = { "yaml", "yml" },
 	kotlin = { "kt", "kts" },
+	c_sharp = { "cs" },
 }
 
 local to_install = {}

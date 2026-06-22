@@ -37,6 +37,15 @@ return require('packer').startup(function(use)
 		requires = { "nvim-lua/plenary.nvim" },
 	}
 
+	-- .NET project management (run, test, add packages, etc.)
+	use {
+		'GustavEikaas/easy-dotnet.nvim',
+		requires = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' },
+		config = function() require('plugins.easy_dotnet') end
+	}
+
+
+
 	-- Git wrapper
 	use { 'tpope/vim-fugitive' }
 	-- Better git diffs
