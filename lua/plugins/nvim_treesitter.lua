@@ -13,6 +13,7 @@ local languages = {
 	yaml = { "yaml", "yml" },
 	kotlin = { "kt", "kts" },
 	c_sharp = { "cs" },
+	vue = { "vue" },
 }
 
 local to_install = {}

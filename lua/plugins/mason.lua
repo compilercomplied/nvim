@@ -6,5 +6,6 @@ require('mason-lspconfig').setup({
 		"basedpyright",
 		"ruff",
 		"kotlin_language_server",
+		"vue_ls",
 	}
 })

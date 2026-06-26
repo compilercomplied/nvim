@@ -2,7 +2,8 @@ require('easy-dotnet').setup({
 	picker = 'telescope',
 })
 
-vim.api.nvim_create_autocmd('VimEnter', {
+vim.api.nvim_create_autocmd('BufReadPost', {
+	pattern = { '*.cs', '*.csproj', '*.sln', '*.fsproj', '*.fs' },
 	once = true,
 	callback = function()
 		local roslyn_lsp = require('easy-dotnet.roslyn.lsp')

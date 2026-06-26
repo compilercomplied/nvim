@@ -19,6 +19,7 @@ require('lsp_servers.typescript_tools')
 require('lsp_servers.basedpyright')
 require('lsp_servers.ruff')
 require('lsp_servers.kotlin_language_server')
+require('lsp_servers.volar')
 
 -- Language servers ------------------------------------------------------------
 vim.lsp.enable('gopls')
