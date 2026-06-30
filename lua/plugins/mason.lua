@@ -11,5 +11,6 @@ require('mason-lspconfig').setup({
 		"ruff",
 		"kotlin_language_server",
 		"vue_ls",
+		"terraformls",
 	}
 })
