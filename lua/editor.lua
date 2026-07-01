@@ -28,7 +28,21 @@ vim.cmd [[ highlight ColorColumn ctermbg=8 guibg=lightgrey ]]
 vim.cmd [[let g:everforest_background = 'hard']]
 vim.cmd [[set termguicolors]]
 vim.cmd [[colorscheme everforest]]
-vim.cmd [[set background=dark]]
+
+local appearance_file = vim.fn.expand('~/.config/nvim/.appearance')
+local f = io.open(appearance_file, 'r')
+if f then
+  local background = f:read('*l')
+  f:close()
+  if background == 'dark' or background == 'light' then
+    vim.o.background = background
+  else
+    vim.o.background = 'dark'
+  end
+else
+  vim.o.background = 'dark'
+end
+
 
 
 -- ----- Accesibility ---------------------------------------------------------
