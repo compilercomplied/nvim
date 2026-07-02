@@ -3,6 +3,7 @@ local telescope = require('editor_scripting.telescope_extensions')
 
 set("Go to declaration", 'n', '<leader>cD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
 set("Go to definition", 'n', '<leader>cd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+set("Peek definition", 'n', '<leader>cp', function() telescope.peek_definition() end)
 set("Hover documentation", 'n', '<leader>ch', '<cmd>lua vim.lsp.buf.hover()<CR>')
 set("Go to implementation", 'n', '<leader>ci', '<cmd>lua vim.lsp.buf.implementation()<CR>')
 set("Signature help", 'n', '<leader>cz', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
